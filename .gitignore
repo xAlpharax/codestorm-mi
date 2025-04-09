@@ -3,6 +3,21 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+*/node_modules/
+*.log
+
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.flv
+*.wmv
+*.webm
+*.m4v
+*.mp3
+
+*.pdf
+
 # C extensions
 *.so
 
