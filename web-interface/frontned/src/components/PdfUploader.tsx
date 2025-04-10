@@ -104,7 +104,7 @@ export default function PdfUploader({ onUploadComplete }: PdfUploaderProps) {
         pdfBase64 = btoa(binary);
       }
 
-      const response = await fetch('http://10.0.12.9:5020/api/materials/upload', {
+      const response = await fetch('http://localhost:5020/api/materials/upload', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

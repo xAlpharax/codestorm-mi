@@ -361,10 +361,10 @@ export default function TeacherDashboard() {
 
       if (videoUrl) {
         formData.append('video_url', videoUrl);
-        response = await axios.post('http://10.0.12.9:8000/upload/youtube/', formData);
+        response = await axios.post('http://localhost:8000/upload/youtube/', formData);
       } else if (videoFile) {
         formData.append('video_file', videoFile);
-        response = await axios.post('http://10.0.12.9:8000/upload/video/', formData);
+        response = await axios.post('http://localhost:8000/upload/video/', formData);
       } else {
         throw new Error('Please provide either a video URL or upload a video file.');
       }
@@ -402,7 +402,7 @@ export default function TeacherDashboard() {
     setLatexResponse(null);
 
     try {
-      const response = await axios.post('http://10.0.12.9:8001/generate-latex/', {
+      const response = await axios.post('http://localhost:8001/generate-latex/', {
         prompt: latexPrompt
       });
       setLatexResponse(response.data);
@@ -590,7 +590,7 @@ export default function TeacherDashboard() {
     setSaveLoading(true);
 
     try {
-      const response = await axios.post('http://10.0.12.9:5020/api/quizzes/save', {
+      const response = await axios.post('http://localhost:5020/api/quizzes/save', {
         topic: parsedQuiz.topic,
         xml: quizXml
       });
@@ -629,7 +629,7 @@ export default function TeacherDashboard() {
     setLoadingQuizzes(true);
 
     try {
-      const response = await axios.get('http://10.0.12.9:5020/api/quizzes');
+      const response = await axios.get('http://localhost:5020/api/quizzes');
 
       if (response.data && response.data.success) {
         // Parse each quiz's XML to get the questions
@@ -663,7 +663,7 @@ export default function TeacherDashboard() {
     setDeleteQuizLoading(true);
 
     try {
-      const response = await axios.post('http://10.0.12.9:5020/api/quizzes/delete', {
+      const response = await axios.post('http://localhost:5020/api/quizzes/delete', {
         key: quizKey
       });
 
@@ -826,7 +826,7 @@ export default function TeacherDashboard() {
     setAssignmentSaveLoading(true);
 
     try {
-      const response = await axios.post('http://10.0.12.9:5020/api/assignments/save', {
+      const response = await axios.post('http://localhost:5020/api/assignments/save', {
         topic: parsedAssignment.topic,
         title: parsedAssignment.title,
         xml: assignmentXml
@@ -866,7 +866,7 @@ export default function TeacherDashboard() {
     setLoadingAssignments(true);
 
     try {
-      const response = await axios.get('http://10.0.12.9:5020/api/assignments');
+      const response = await axios.get('http://localhost:5020/api/assignments');
 
       if (response.data && response.data.success) {
         // Parse each assignment's XML to get the details
@@ -903,7 +903,7 @@ export default function TeacherDashboard() {
     setDeleteAssignmentLoading(true);
 
     try {
-      const response = await axios.post('http://10.0.12.9:5020/api/assignments/delete', {
+      const response = await axios.post('http://localhost:5020/api/assignments/delete', {
         key: assignmentKey
       });
 

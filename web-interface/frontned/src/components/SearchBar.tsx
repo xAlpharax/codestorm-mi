@@ -33,7 +33,7 @@ export default function SearchBar({ onResultSelect }: SearchBarProps) {
       setLoading(true);
       setError(null);
 
-      const response = await axios.post('http://10.0.12.9:5020/api/materials/search', {
+      const response = await axios.post('http://localhost:5020/api/materials/search', {
         query: query.trim(),
         limit: 5
       });

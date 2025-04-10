@@ -56,7 +56,7 @@ export default function MaterialsList({ onMaterialSelect, isStudentView = false 
       setLoading(true);
       setError(null);
 
-      const response = await axios.get('http://10.0.12.9:5020/api/materials', {
+      const response = await axios.get('http://localhost:5020/api/materials', {
         timeout: 10000
       });
 
@@ -99,7 +99,7 @@ export default function MaterialsList({ onMaterialSelect, isStudentView = false 
 
       while (!success && retryCount <= maxRetries) {
         try {
-          response = await axios.post('http://10.0.12.9:5020/api/materials/sync-name',
+          response = await axios.post('http://localhost:5020/api/materials/sync-name',
             { key },
             {
               headers: {
@@ -160,7 +160,7 @@ export default function MaterialsList({ onMaterialSelect, isStudentView = false 
 
       while (!success && retryCount <= maxRetries) {
         try {
-          response = await axios.post('http://10.0.12.9:5020/api/materials/sync-all', {}, {
+          response = await axios.post('http://localhost:5020/api/materials/sync-all', {}, {
             headers: {
               'Content-Type': 'application/json'
             },
@@ -207,7 +207,7 @@ export default function MaterialsList({ onMaterialSelect, isStudentView = false 
       setDeletingKey(key);
       setError(null);
 
-      const response = await axios.post('http://10.0.12.9:5020/api/materials/delete',
+      const response = await axios.post('http://localhost:5020/api/materials/delete',
         { key },
         {
           headers: {

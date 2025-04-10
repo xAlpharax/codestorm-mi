@@ -28,7 +28,7 @@ export default function PdfViewer({ documentKey, documentName = 'Document' }: Pd
 
   // Ensure the document key is encoded properly, especially for the case of doc:brasov-cursuri:0
   const encodedKey = encodeURIComponent(docId);
-  const pdfUrl = `http://10.0.12.9:5020/api/materials/${encodedKey}/pdf`;
+  const pdfUrl = `http://localhost:5020/api/materials/${encodedKey}/pdf`;
 
   useEffect(() => {
     console.log(`Loading PDF for key: ${docId}, URL: ${pdfUrl}`);

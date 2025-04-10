@@ -519,7 +519,7 @@ export default function StudentDashboard() {
   const fetchQuizzes = async () => {
     try {
       setLoadingQuizzes(true);
-      const response = await axios.get('http://10.0.12.9:5020/api/quizzes');
+      const response = await axios.get('http://localhost:5020/api/quizzes');
 
       if (response.data && response.data.success) {
         // Parse the quizzes and their XML
@@ -676,7 +676,7 @@ export default function StudentDashboard() {
   const fetchAssignments = async () => {
     try {
       setLoadingAssignments(true);
-      const response = await axios.get('http://10.0.12.9:5020/api/assignments');
+      const response = await axios.get('http://localhost:5020/api/assignments');
 
       if (response.data && response.data.success) {
         // Parse the assignments and their XML
@@ -938,7 +938,7 @@ export default function StudentDashboard() {
       // Use axios with JSON content type
       const response = await axios({
         method: 'post',
-        url: 'http://10.0.12.9:8000/upload/youtube/',
+        url: 'http://localhost:8000/upload/youtube/',
         data: requestBody,
         headers: {
           'Content-Type': 'application/json'
@@ -1012,7 +1012,7 @@ export default function StudentDashboard() {
       formData.append('task', videoTask);
 
       const response = await axios.post(
-        'http://10.0.12.9:8000/upload/video/',
+        'http://localhost:8000/upload/video/',
         formData,
         {
           headers: { 'Content-Type': 'multipart/form-data' },
@@ -1079,7 +1079,7 @@ export default function StudentDashboard() {
       formData.append('task', latexTask);       // Add task
 
       const response = await axios.post(
-        'http://10.0.12.9:8001/uploadfiles/', // Updated endpoint and port
+        'http://localhost:8001/uploadfiles/', // Updated endpoint and port
         formData,
         {
           headers: { 'Content-Type': 'multipart/form-data' },
@@ -1140,7 +1140,7 @@ export default function StudentDashboard() {
       formData.append('latex_code', latexPrompt);
 
       const response = await axios.post(
-        'http://10.0.12.9:8001/generate-pdf/',
+        'http://localhost:8001/generate-pdf/',
         formData,
         {
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -1174,7 +1174,7 @@ export default function StudentDashboard() {
       formData.append('latex_code', latexCode);
 
       const response = await axios.post(
-        'http://10.0.12.9:8001/generate-pdf/',
+        'http://localhost:8001/generate-pdf/',
         formData,
         {
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -2367,7 +2367,7 @@ Your content here...
 
       {/* Add BubbleChat component */}
       <BubbleChat
-        chatflowid="9add482b-d882-4e9c-b82e-497b5db63c99"
+        chatflowid="9ffc4511-5216-4454-b256-10c59ddeeddc"
         apiHost="https://flow.sprk.ro"
       />
     </>
