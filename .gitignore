@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 
 */node_modules/
+demo_content
 *.log
 
 *.mp4
