@@ -2,7 +2,7 @@
 
 My team's entry in CodeStorm@MI Hackathon 2025. Winning first place by making Educational AI Agents for both students and professors alike.
 
-The hackathon was organized by the Faculty of Mathematics and Computer Science at Transilvania University of Brasov.
+This hackathon was organized by the Faculty of Mathematics and Computer Science at Transilvania University of Brasov.
 
 ## Technologies
 
@@ -15,21 +15,26 @@ Both the Video Understanding and LaTeX Generator APIs were made with:
 - FastAPI
 - uvicorn
 - Google GenAI
+
 We made use of `Gemini 2.5 Pro Experimental/Preview 03-25` as it is the SOTA model on both [livebench](https://livebench.ai) and [lmarena](https://lmarena.ai/). This model performs great on pretty much all task but can get quite rate-limited, we also used a fallback for `Gemini 2.0 Flash Thinking Experimental 01-21` as it is still a great vision, math and all-rounded thinking model.
 
 As for the WebUI, vibe-coding got the interface and functionalities pretty far:
+
 The backend:
 - Python
 - Requests
 - Flask
 - Redis
+
 It was used to do Flowise API calls to our Flowise self-hosted instance of custom made chatflows for this project, leveraging Redis, Vector Stores, LangChain and Agentic RAG techniques with `QwQ-32B` and `mistral-small-3.1-24b-instruct-2503` as our local LLMs.
+
 The frontend:
 - TypeScript
 - Vite
 - Tailwind
 - Yarn
 - ChatBubble Embed from Flowise
+
 And other boring webdev shenanigans (probably).
 
 We used our VPN to develop securely and remotely, we also run IP whitelisting on our public API domains so anything that might seem "giving" is secure in fact.
