@@ -14,7 +14,8 @@ Both the Video Understanding and LaTeX Generator APIs were made with:
 - Python
 - FastAPI
 - uvicorn
-- Google GenAI
+- pydantic
+- Google-GenAI
 
 We made use of `Gemini 2.5 Pro Experimental/Preview 03-25` as it is the SOTA model on both [livebench](https://livebench.ai) and [lmarena](https://lmarena.ai/). This model performs great on pretty much all task but can get quite rate-limited, we also used a fallback for `Gemini 2.0 Flash Thinking Experimental 01-21` as it is still a great vision, math and all-rounded thinking model.
 
@@ -24,13 +25,16 @@ The backend:
 - Python
 - Requests
 - Flask
+- Flask_CORS (Flask is not a great package particularly)
+- gunicorn
 - Redis
 
 It was used to do Flowise API calls to our Flowise self-hosted instance of custom made chatflows for this project, leveraging Redis, Vector Stores, LangChain and Agentic RAG techniques with `QwQ-32B` and `mistral-small-3.1-24b-instruct-2503` as our local LLMs.
 
 The frontend:
-- TypeScript
 - Vite
+- React
+- TypeScript
 - Tailwind
 - Yarn
 - ChatBubble Embed from Flowise
@@ -55,7 +59,7 @@ pyenv activate codestorm-mi
 pip install -r requirements.txt
 ```
 
-This should take care of all the dependencies. (Hopefully thoroughly tested)
+This should take care of all the dependencies (Hopefully thoroughly tested). Also add a `GEMINI_API_KEY` in a `.env` where needed (Video Understanding and LaTeX Writing APIs)
 
 ## Running
 
@@ -64,7 +68,7 @@ To get the web backend running:
 ```bash
 cd web-interface/backend
 
-gunicorn --workers 4 --bind 0.0.0.0:5020 app:app
+gunicorn app:app --workers 4 --bind 0.0.0.0:5020
 ```
 
 Now also run:
@@ -89,7 +93,7 @@ yarn install
 yarn run dev --host 0.0.0.0
 ```
 
-## Video Demo
+## Video Showcase
 
 [YouTube Video Demonstration](https://youtu.be/S779G78ZZpM?si=c52Uy-ZUKIMh7aZr)
 
