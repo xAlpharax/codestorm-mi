@@ -6,7 +6,7 @@ This hackathon was organized by the Faculty of Mathematics and Computer Science 
 
 ## Technologies
 
-We wanted to do something with `agno` as it is a pretty great framework to develop in, but it's not quite ready. You may find a couple "cookbook" examples of how to use it and why it's cool for developing agents under `./agno-testing/`.
+We wanted to do something with [agno](https://www.agno.com/) as it is a pretty great framework to develop in, but it's not quite ready yet. You may find a couple "cookbook" examples of how to use it and why it's cool for developing agents under `./agno-testing/`. I may come back to it later.
 
 As for the actual technologies we settled for:
 
@@ -19,7 +19,7 @@ Both the Video Understanding and LaTeX Generator APIs were made with:
 
 We made use of `Gemini 2.5 Pro Experimental/Preview 03-25` as it is the SOTA model on both [livebench](https://livebench.ai) and [lmarena](https://lmarena.ai/). This model performs great on pretty much all task but can get quite rate-limited, we also used a fallback for `Gemini 2.0 Flash Thinking Experimental 01-21` as it is still a great vision, math and all-rounded thinking model.
 
-As for the WebUI, vibe-coding got the interface and functionalities pretty far:
+As for the WebUI, vibe-coding (made by [@CesarPetrescu](https://github.com/CesarPetrescu)) got the interface and functionalities pretty far:
 
 The backend:
 - Python
@@ -41,7 +41,7 @@ The frontend:
 
 And other boring webdev shenanigans (probably).
 
-We used our VPN to develop securely and remotely, we also run IP whitelisting on our public API domains so anything that might seem "giving" is secure in fact.
+We used our VPN to develop securely and remotely, we also run IP whitelisting on our public API domains so anything that might seem "giving" is secure in fact. The backend may be completely done in FastAPI and unified in the future if the project doesn't die and actually gets traction with the University.
 
 ## Requirements
 
