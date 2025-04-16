@@ -19,6 +19,13 @@ demo_content
 
 *.pdf
 
+*.png
+*.jpg
+*.JPG
+*.jpeg
+*.gif
+*.tiff
+
 # C extensions
 *.so
 
